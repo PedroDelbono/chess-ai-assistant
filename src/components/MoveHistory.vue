@@ -1,0 +1,2 @@
+<script setup>defineProps({history:{type:Array,required:true}})</script>
+<template><section class="subpanel"><h3>Histórico de jogadas</h3><div class="history"><div v-for="i in Math.ceil(history.length/2)" :key="i" class="move-row"><span class="move-number">{{i}}.</span><span>{{history[(i-1)*2]?.san}}</span><span>{{history[(i-1)*2+1]?.san??''}}</span></div><p v-if="!history.length" class="muted">Nenhuma jogada registrada.</p></div></section></template>
